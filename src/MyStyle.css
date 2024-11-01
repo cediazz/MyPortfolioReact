@@ -1,0 +1,7 @@
+.my-header-background{
+    background-image: url(./assets/img/lenguaje-de-programación.jpg); 
+    background-size: cover;
+     backdrop-filter: blur(1px);
+     backdrop-filter:  blur(100px);
+     -webkit-backdrop-filter: blur(10px);
+  }
