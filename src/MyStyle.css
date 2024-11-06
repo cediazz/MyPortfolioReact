@@ -5,3 +5,14 @@
      backdrop-filter:  blur(100px);
      -webkit-backdrop-filter: blur(10px);
   }
+
+  .error-message {
+    color: red; 
+    font-weight: bold; 
+    font-size: 14px; 
+    margin-top: 5px; 
+}
+
+.my-color{
+  color: #16A085;
+}
