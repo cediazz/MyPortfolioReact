@@ -57,7 +57,7 @@ function ContactSection() {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Something went wrong!. check your connection",
+                text: "Something went wrong!. Check your connection",
                 confirmButtonColor: '#F27474'
             });
 
