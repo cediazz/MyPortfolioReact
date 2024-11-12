@@ -17,7 +17,7 @@ function AboutSection(){
                     <div class="col-lg-4 me-auto"><p class="lead text-justify">My skills: HTML,CSS.....</p></div>
                 </div>
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
+                    <a class="btn btn-xl btn-outline-light" href="#!">
                         <i class="fas fa-download me-2"></i>
                          Download CV
                     </a>

@@ -1,4 +1,5 @@
 import Item1 from "../PortfolioItems/Item1/Item1";
+import Item2 from "../PortfolioItems/Item2/Item2";
 
 function Section() {
   
@@ -18,6 +19,9 @@ function Section() {
         <div class="row justify-content-center">
           <div class="col-md-6 col-lg-4 mb-5">
             <Item1 />
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <Item2 />
           </div>
         </div>
       </div>

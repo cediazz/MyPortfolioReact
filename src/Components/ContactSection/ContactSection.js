@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 function ContactSection() {
 
-   const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
 
     const validationSchema = Yup.object().shape({
@@ -20,27 +20,47 @@ function ContactSection() {
         values["access_key"] = "26cb8c16-33d0-472b-abf9-fabf5c9617e9"
         console.log(values)
         const json = JSON.stringify(values);
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        }).then((res) => res.json());
-        if (res.success) {
-           setLoading(false)
-           Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success",
-            color: '#16A085',
-            confirmButtonColor: '#16A085'
-          });
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: json
+            }).then((res) => res.json())
+            console.log(res)
+            if (res.success) {
+                setLoading(false)
+                Swal.fire({
+                    title: "Good job!",
+                    text: res.message,
+                    icon: "success",
+                    color: '#16A085',
+                    iconColor: '#16A085',
+                    confirmButtonColor: '#16A085'
+                });
 
+            }
+            else {
+                setLoading(false)
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: res.message,
+                    confirmButtonColor: '#F27474'
+                });
+            }
         }
-        else{
+        catch (error) {
             setLoading(false)
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!. check your connection",
+                confirmButtonColor: '#F27474'
+            });
+
         }
     }
 
@@ -63,25 +83,22 @@ function ContactSection() {
                         >
                             <Form>
                                 <div class="form-floating mb-3">
-                                    <Field class="form-control" name="fullName" type="text" />
+                                    <Field class="form-control" id="name" name="fullName" type="text" placeholder="Enter your name..." />
                                     <label for="name">Full name</label>
-                                    <ErrorMessage name="fullName" component="div" className='error-message' ></ErrorMessage>
+                                    <ErrorMessage name="fullName" >{(msg) => <div className='error-message'>{msg}<i class="fas fa-exclamation-circle px-1"></i></div>}</ErrorMessage>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <Field class="form-control" name="email" type="email" />
+                                    <Field class="form-control" id="email" name="email" type="email" placeholder="name@example.com" />
                                     <label for="email">Email address</label>
-                                    <ErrorMessage name="email" component="div" className='error-message' />
+                                    <ErrorMessage name="email" >{(msg) => <div className='error-message'>{msg}<i class="fas fa-exclamation-circle px-1"></i></div>}</ErrorMessage>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <Field class="form-control" as="textarea" name="message" />
+                                    <Field class="form-control" id="message" as="textarea" name="message" placeholder="Enter your message here..." style={{ height: '10rem' }} />
                                     <label for="message">Message</label>
-                                    <ErrorMessage name="message" component="div" className='error-message' />
+                                    <ErrorMessage name="message" >{(msg) => <div className='error-message'>{msg}<i class="fas fa-exclamation-circle px-1"></i></div>}</ErrorMessage>
                                 </div>
-
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                 <button class="btn btn-primary btn-xl" type="submit">Send</button>
                             </Form>
-
                         </Formik>
                     </div>
                 </div>

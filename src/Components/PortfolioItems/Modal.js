@@ -10,7 +10,7 @@ function Modal(props) {
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-lg-8">
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{props.appName}</h2>
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
