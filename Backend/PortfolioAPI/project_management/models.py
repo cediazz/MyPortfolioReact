@@ -7,6 +7,9 @@ class Project(models.Model):
     description = models.TextField(verbose_name='descripción del proyecto')
     image = models.ImageField(upload_to='projects_images',blank=True,verbose_name='imagen del proyecto')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Proyecto'
         
