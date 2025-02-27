@@ -1,8 +1,9 @@
 import Item1 from "../PortfolioItems/Item1/Item1";
 import Item2 from "../PortfolioItems/Item2/Item2";
 
+
 function Section() {
-  
+
   return (
     <section class="page-section portfolio" id="portfolio">
       <div class="container">
@@ -25,7 +26,7 @@ function Section() {
           </div>
         </div>
       </div>
-     </section>
+    </section>
   );
 }
 
