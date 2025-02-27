@@ -1,8 +1,26 @@
-import Item1 from "../PortfolioItems/Item1/Item1";
-import Item2 from "../PortfolioItems/Item2/Item2";
+import Item1 from "../PortfolioItems/Item1/Item1"
+import Item2 from "../PortfolioItems/Item2/Item2"
+import { useState,useEffect } from "react"
+import axios from 'axios'
 
+function Portfolio() {
 
-function Section() {
+  const [projects,setProjects] = useState([])
+
+  const getProjects = async () =>{
+    try {
+      let response = await axios.get('http://127.0.0.1:8000/projects/list-projects')
+      if (response.status === 200)
+        setProjects(response.data)
+      } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect( () => {
+    getProjects()
+  },[] )
+
 
   return (
     <section class="page-section portfolio" id="portfolio">
@@ -30,4 +48,4 @@ function Section() {
   );
 }
 
-export default Section;
+export default Portfolio;
