@@ -34,7 +34,7 @@ function Portfolio() {
           </div>
           <div class="divider-custom-line"></div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row ">
           {
             projects.map(project =>
               <div class="col-md-6 col-lg-4 mb-5" key={project.id}>

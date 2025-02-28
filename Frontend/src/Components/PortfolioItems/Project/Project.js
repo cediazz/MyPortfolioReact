@@ -1,5 +1,5 @@
 import Modal from "../Modal"
-import cabin from "../../../assets/img/cabin.png"
+
 
 function Project({ id,projectName, description, website_url, repository_url, image }) {
 
@@ -12,7 +12,7 @@ function Project({ id,projectName, description, website_url, repository_url, ima
                     <i class="fas fa-plus fa-3x"></i>
                 </div>
             </div>
-            <img class="img-fluid" src={image} alt="..." width={300} height={300} />
+            <img  src={image} width={400} height={200} alt="..." />
             <Modal
                 image={image}
                 id={id}
