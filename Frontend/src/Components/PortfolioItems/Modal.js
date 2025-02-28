@@ -1,8 +1,8 @@
 
-function Modal(props) {
+function Modal({ id,projectName, description, website_url, repository_url, image }) {
 
   return (
-    <div class="portfolio-modal modal fade" id={props.id} tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id={`modal${id}`} tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
@@ -10,22 +10,22 @@ function Modal(props) {
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-lg-8">
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{props.appName}</h2>
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{projectName}</h2>
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                   </div>
-                  <img class="img-fluid rounded mb-5" src={props.image} alt="..." />
-                  <p class="mb-4">
-                    {props.desc}
+                  <img class="img-fluid rounded mb-5" src={image} alt="..." />
+                  <p class="mb-4 text-justify">
+                    {description}
                   </p>
-                  <button class="btn btn-primary me-1" data-bs-dismiss="modal">
+                  <a href={website_url} class="btn btn-primary me-1" >
                     Website
-                  </button>
-                  <button class="btn btn-primary me-1" data-bs-dismiss="modal">
+                  </a>
+                  <a href={repository_url} class="btn btn-primary me-1" >
                     Repository
-                  </button>
+                  </a>
                   <button class="btn btn-primary me-1" data-bs-dismiss="modal">
                     Close Window
                   </button>

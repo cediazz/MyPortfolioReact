@@ -1,25 +1,24 @@
-import Item1 from "../PortfolioItems/Item1/Item1"
-import Item2 from "../PortfolioItems/Item2/Item2"
-import { useState,useEffect } from "react"
+import Project from "../PortfolioItems/Project/Project"
+import { useState, useEffect } from "react"
 import axios from 'axios'
 
 function Portfolio() {
 
-  const [projects,setProjects] = useState([])
+  const [projects, setProjects] = useState([])
 
-  const getProjects = async () =>{
+  const getProjects = async () => {
     try {
       let response = await axios.get('http://127.0.0.1:8000/projects/list-projects')
       if (response.status === 200)
         setProjects(response.data)
-      } catch (error) {
+    } catch (error) {
       console.log(error)
     }
   }
 
-  useEffect( () => {
+  useEffect(() => {
     getProjects()
-  },[] )
+  }, [])
 
 
   return (
@@ -36,12 +35,22 @@ function Portfolio() {
           <div class="divider-custom-line"></div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-4 mb-5">
-            <Item1 />
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <Item2 />
-          </div>
+          {
+            projects.map(project =>
+              <div class="col-md-6 col-lg-4 mb-5" key={project.id}>
+                <Project
+                  id={project.id}
+                  projectName={project.name}
+                  description={project.description}
+                  image={project.image}
+                  repository_url={project.repository_url}
+                  website_url={project.website_url}
+                />
+
+              </div>
+            )
+          }
+
         </div>
       </div>
     </section>
