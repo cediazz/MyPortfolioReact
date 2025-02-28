@@ -1,8 +1,8 @@
 
-function Modal({ id,projectName, description, website_url, repository_url, image }) {
+function Modal({ id, projectName, description, website_url, repository_url, image }) {
 
   return (
-    <div class="portfolio-modal modal fade" id={`modal${id}`} tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+    <div class="portfolio-modal modal" id={`modal${id}`} tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
@@ -17,9 +17,23 @@ function Modal({ id,projectName, description, website_url, repository_url, image
                     <div class="divider-custom-line"></div>
                   </div>
                   <img class="img-fluid rounded mb-5" src={image} alt="..." />
-                  <p class="mb-4 text-justify">
+                  <textarea
+                    class="mb-4"
+                    rows={5}
+                    readOnly
+                    style={
+                      {
+                        width: '100%',
+                        border: 'none',
+                        resize: 'none',
+                        background: 'transparent',
+                        boxShadow: 'none',
+                        userSelect: 'none'
+                      }
+                    }
+                  >
                     {description}
-                  </p>
+                  </textarea>
                   <a href={website_url} class="btn btn-primary me-1" >
                     Website
                   </a>
