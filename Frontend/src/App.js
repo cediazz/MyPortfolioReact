@@ -7,17 +7,18 @@ import Portfolio from './Components/Portfolio/Portfolio';
 import AboutSection from './Components/AboutSection/AboutSection';
 import ContactSection from './Components/ContactSection/ContactSection';
 import Footer from './Components/Footer/Footer';
+import { UserProvider } from './context/userContext';
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <NavBar />
       <Header />
       <Portfolio />
       <AboutSection />
       <ContactSection />
       <Footer />
-    </>
+    </UserProvider>
   );
 }
 
