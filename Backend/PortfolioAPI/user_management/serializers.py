@@ -8,7 +8,7 @@ from rest_framework import serializers
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = '__all__'
+        exclude = ['user']
 
 
 
@@ -18,7 +18,7 @@ class UserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ['username', 'password', 'is_staff','is_superuser','user_profile']
+        fields = ['username', 'password','first_name','last_name', 'is_staff','is_superuser','user_profile']
     
 
     def validate_password(self, value):
@@ -30,7 +30,20 @@ class UserSerializer(serializers.ModelSerializer):
     
 
     def create(self,validated_data):
+        user_profile_data = validated_data.pop('user_profile')
         user = User(**validated_data)
         user.set_password(validated_data['password'])
         user.save()
+        UserProfile.objects.create(user = user,**user_profile_data)
         return user
+    
+    def update(self, instance, validated_data):
+        user_profile_data = validated_data.pop('user_profile')
+        instance.__dict__.update(validated_data)
+        instance.set_password(validated_data['password'])
+        instance.save()
+        if user_profile_data:
+            profile = instance.user_profile
+            profile.__dict__.update(user_profile_data)
+            profile.save()
+        return instance
