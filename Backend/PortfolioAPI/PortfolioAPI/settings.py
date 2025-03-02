@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'project_management',
-    'user_management'
+    'user_management',
+    'curriculum_management'
 ]
 
 MIDDLEWARE = [
