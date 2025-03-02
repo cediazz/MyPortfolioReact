@@ -102,7 +102,7 @@ function ContactSection() {
                         </Formik>
                     </div>
                 </div>
-                {loading && <Loading />}
+                {loading && <Loading width={'3rem'} height={'3rem'} />}
             </div>
         </section>
     )
