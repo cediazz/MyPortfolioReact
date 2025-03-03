@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import CurriculumListView
+from .views import download_cv
 
 urlpatterns = [
-    path('list-cv', CurriculumListView.as_view(), name='list-cv'),
+   path('download-cv/', download_cv, name='download_cv'),
 ]

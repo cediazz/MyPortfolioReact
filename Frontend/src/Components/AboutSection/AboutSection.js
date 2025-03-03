@@ -3,6 +3,8 @@
 
 function AboutSection({user}) {
 
+    
+
     return (
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
@@ -53,7 +55,7 @@ function AboutSection({user}) {
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="#!">
+                    <a class="btn btn-xl btn-outline-light"  href={'http://localhost:8000/cvs/download-cv/'}>
                         <i class="fas fa-download me-2"></i>
                         Download CV
                     </a>
