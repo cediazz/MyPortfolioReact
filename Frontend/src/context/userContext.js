@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
 
     const getUser = async () => {
         try {
-          let response = await axios.get('http://127.0.0.1:8000/users/')
+          let response = await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/users`)
           if (response.status === 200)
             setUser(response.data)
         } catch (error) {

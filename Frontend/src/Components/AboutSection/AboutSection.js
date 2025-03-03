@@ -55,7 +55,7 @@ function AboutSection({user}) {
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light"  href={'http://localhost:8000/cvs/download-cv/'}>
+                    <a class="btn btn-xl btn-outline-light"  href={`${process.env.REACT_APP_BACKEND_HOST}/cvs/download-cv/`}>
                         <i class="fas fa-download me-2"></i>
                         Download CV
                     </a>

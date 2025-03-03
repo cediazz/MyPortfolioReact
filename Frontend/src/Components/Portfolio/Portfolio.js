@@ -8,7 +8,7 @@ function Portfolio() {
 
   const getProjects = async () => {
     try {
-      let response = await axios.get('http://127.0.0.1:8000/projects/list-projects')
+      let response = await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/projects/list-projects`)
       if (response.status === 200)
         setProjects(response.data)
     } catch (error) {
