@@ -8,7 +8,7 @@ class UserProfile(models.Model):
     location = models.CharField(max_length=256,verbose_name='dirección',null=True)
     facebook_url = models.URLField(max_length=200, blank=True, null=True,verbose_name='url de facebook')
     linkedin_url = models.URLField(max_length=200, blank=True, null=True,verbose_name='url de linkedin')
-    image = models.ImageField(upload_to='user_images',blank=True,verbose_name='imagen del usuario')
+    image = models.ImageField(blank=True,verbose_name='imagen del usuario')
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_profile', verbose_name='usuario')
 
     def __str__(self):

@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Loading from '../Loading/Loading';
 import Swal from 'sweetalert2'
+import StarIcon from "../Icons/StarIcon"
 
 function ContactSection() {
 
@@ -71,7 +72,9 @@ function ContactSection() {
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon">
+                        <StarIcon />
+                    </div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="row justify-content-center">
@@ -85,17 +88,17 @@ function ContactSection() {
                                 <div class="form-floating mb-3">
                                     <Field class="form-control" id="name" name="fullName" type="text" placeholder="Enter your name..." />
                                     <label for="name">Full name</label>
-                                    <ErrorMessage name="fullName" >{(msg) => <div className='error-message'>{msg}<i class="fas fa-exclamation-circle px-1"></i></div>}</ErrorMessage>
+                                    <ErrorMessage name="fullName" >{(msg) => <div className='error-message'>{msg}</div>}</ErrorMessage>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <Field class="form-control" id="email" name="email" type="email" placeholder="name@example.com" />
                                     <label for="email">Email address</label>
-                                    <ErrorMessage name="email" >{(msg) => <div className='error-message'>{msg}<i class="fas fa-exclamation-circle px-1"></i></div>}</ErrorMessage>
+                                    <ErrorMessage name="email" >{(msg) => <div className='error-message'>{msg}</div>}</ErrorMessage>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <Field class="form-control" id="message" as="textarea" name="message" placeholder="Enter your message here..." style={{ height: '10rem' }} />
                                     <label for="message">Message</label>
-                                    <ErrorMessage name="message" >{(msg) => <div className='error-message'>{msg}<i class="fas fa-exclamation-circle px-1"></i></div>}</ErrorMessage>
+                                    <ErrorMessage name="message" >{(msg) => <div className='error-message'>{msg}</div>}</ErrorMessage>
                                 </div>
                                 <button class="btn btn-primary btn-xl" type="submit">Send</button>
                             </Form>

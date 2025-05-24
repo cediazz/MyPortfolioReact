@@ -1,9 +1,7 @@
 
-
+import StarIcon from "../Icons/StarIcon"
 
 function AboutSection({user}) {
-
-    
 
     return (
         <section class="page-section bg-primary text-white mb-0" id="about">
@@ -11,7 +9,9 @@ function AboutSection({user}) {
                 <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon">
+                       <StarIcon />
+                    </div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="row">

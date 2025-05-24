@@ -1,3 +1,4 @@
+import StarIcon from "../Icons/StarIcon"
 
 function Modal({ id, projectName, description, website_url, repository_url, image }) {
 
@@ -13,7 +14,7 @@ function Modal({ id, projectName, description, website_url, repository_url, imag
                   <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{projectName}</h2>
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><StarIcon /></div>
                     <div class="divider-custom-line"></div>
                   </div>
                   <img class="img-fluid rounded mb-5" src={image} alt="..." />

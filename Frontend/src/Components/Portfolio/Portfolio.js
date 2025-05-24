@@ -1,6 +1,7 @@
 import Project from "../PortfolioItems/Project/Project"
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import StarIcon from "../Icons/StarIcon"
 
 function Portfolio() {
 
@@ -30,7 +31,7 @@ function Portfolio() {
         <div class="divider-custom">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
-            <i class="fas fa-star"></i>
+            <StarIcon />
           </div>
           <div class="divider-custom-line"></div>
         </div>

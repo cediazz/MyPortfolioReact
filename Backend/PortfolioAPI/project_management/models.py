@@ -5,7 +5,7 @@ class Project(models.Model):
     website_url = models.URLField(max_length=200, blank=True, null=True,verbose_name='url del sitio')
     repository_url = models.URLField(max_length=200, blank=True, null=True,verbose_name='url del repositorio')
     description = models.TextField(verbose_name='descripción del proyecto')
-    image = models.ImageField(upload_to='projects_images',blank=True,verbose_name='imagen del proyecto')
+    image = models.ImageField(blank=True,verbose_name='imagen del proyecto')
 
     def __str__(self):
         return self.name

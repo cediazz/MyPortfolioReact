@@ -1,7 +1,5 @@
 Frontend/node_modules
-Frontend/.env
-venv
 Backend/PortfolioAPI/Media
-Backend/PortfolioAPI/.env
+Backend/PortfolioAPI/.venv
 
 
