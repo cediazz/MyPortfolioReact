@@ -1,6 +1,5 @@
 ## Running this project
-Para poner en marcha este proyecto, debe tener instalado Python 3.12 en su ordenador y el gestor de paquetes de python uv. Enlace: https://docs.astral.sh/uv/getting-started/installation/.
-You can install UV with
+To get this project up and running, you must have Python 3.12 installed on your computer and the python package manager uv. Link: https://docs.astral.sh/uv/getting-started/installation/. You can install UV with
 ````markdown
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ````
